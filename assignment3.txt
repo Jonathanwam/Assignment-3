@@ -1,0 +1,21 @@
+Assignment 3
+Due (attached to an email) before class on Tuesday, February 9th.
+This assignment adds to the code written for assignment 2.
+Define a “struct” which contains a pointer to a string (this will later be regarded
+as a “key”), and an integer to be used for counting occurrences. Instances of
+this “struct” will typically be allocated from the heap and strung together as a
+singly-linked list with a terminating NULL pointer. Therefore, it will also need to
+contain a pointer to another “struct” of its own type.
+Modify your “word” program as follows:
+1. Define the data structure item described above.
+2. As your code extracts words from a file using getNextWord(), rather
+than printing them to stdout, linearly search a existing linked list of
+key/value pairs for the word as a key. If the word is found in the list,
+increment the associated integer counter value. If not, construct a new
+instance of the “struct”, place a pointer to the word in it as the key and
+initialize the integer counter to one. Attach the new “struct” to the linked
+list.
+3. After the last file has been read and getNextWord() has returned NULL,
+traverse the linked list of “structs”, printing out the words (keys) and
+their associated occurrence counts to stdout, one pair per line. Use the
+following printf format for printing: "%10d %s\n" .
